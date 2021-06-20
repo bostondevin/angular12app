@@ -3,8 +3,8 @@
     <mat-form-field appearance="legacy">
         <mat-label>Choose Date Range</mat-label>
         <mat-date-range-input [rangePicker]="picker" [min]="minDate" [max]="maxDate" [formGroup]="dateRange">
-            <input matStartDate formControlName="start" placeholder="Start Date" #dateRangeStart>
-            <input matEndDate formControlName="end" placeholder="End Date" #dateRangeEnd
+            <input matStartDate formControlName="start" placeholder="Start Date" #dateRangeStart readonly>
+            <input matEndDate formControlName="end" placeholder="End Date" #dateRangeEnd readonly
                 (dateChange)="dateRangeChange(dateRangeStart, dateRangeEnd)">
         </mat-date-range-input>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
