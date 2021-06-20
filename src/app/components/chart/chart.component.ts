@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { sampleData } from './sampleData'
+import { Series } from '../../models/Series'
+import { Item } from '../../models/Item'
 
 @Component({
     selector: 'x-chart',
@@ -9,7 +11,7 @@ import { sampleData } from './sampleData'
 })
 export class ChartComponent implements OnInit {
 
-    results: any[] = [];
+    results: Series[] = [];
     minDate = new Date(sampleData[0].name);
     maxDate = new Date(sampleData[sampleData.length-1].name);
     dateRange = new FormGroup({
@@ -34,7 +36,7 @@ export class ChartComponent implements OnInit {
 
         if (dateRangeEnd.value){
 
-            const rangedSeries = sampleData.filter((item)=>{
+            const rangedSeries = sampleData.filter((item: Item)=>{
                 const date = new Date(item.name)
                 const start = new Date(dateRangeStart.value)
                 const end = new Date(dateRangeEnd.value)
@@ -50,7 +52,7 @@ export class ChartComponent implements OnInit {
         }
     }
 
-    formatSeries(data: any[]) {
+    formatSeries(data: Item[]) {
         return [
             {
                 name: 'Items',
