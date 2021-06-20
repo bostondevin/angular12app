@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AppComponent } from './app.component';
 import { ChartComponent } from './components/chart/chart.component';
+import { HomeComponent } from './components/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker'  
 import { MatNativeDateModule } from '@angular/material/core'  
@@ -13,7 +14,8 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 @NgModule({
   declarations: [
     AppComponent,
-    ChartComponent
+    ChartComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
